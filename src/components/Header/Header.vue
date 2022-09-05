@@ -10,7 +10,7 @@ const taskStore = useTaskStore()
 <template>
   <header>
     <h4>Welcome, Stan </h4>
-    <p>You've got {{taskStore.getNumberOfTasks}} tasks coming up in the next days</p>
+    <p class="fw-light text-sm">You've got {{taskStore.getNumberOfTasks}} tasks coming up in the next days</p>
 </header>
 </template>
 
