@@ -9,6 +9,12 @@ export const useTaskStore = defineStore("task", () => {
     return task.value.length;
   });
 
+  const getNumberOfUncheckedTasks = computed(() => {
+    let newTask = [...task.value]
+    let uncheckedTasks = newTask.filter((task) => task.isCompleted === false )
+    return uncheckedTasks.length
+  });
+
   const addTask = (label: string, description: string, category: Category) => {
     const newTask = [
       ...task.value,
@@ -41,5 +47,5 @@ export const useTaskStore = defineStore("task", () => {
     task.value = newTask;
   };
 
-  return { task, getNumberOfTasks, addTask, deleteTask, setCompletedTask };
+  return { task, getNumberOfTasks,getNumberOfUncheckedTasks, addTask, deleteTask, setCompletedTask };
 });
