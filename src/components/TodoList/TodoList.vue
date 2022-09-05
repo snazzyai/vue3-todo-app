@@ -31,19 +31,22 @@ const handleCheckboxClick = (id: string) => {
         <div v-show="showCard" class="card shadow-sm bg-body rounded my-3 border-0" v-for="task in taskStore.task"
             :key="task.id">
             <div class="m-2 p-2 card-body">
-                <div class="d-flex flex-row flex-wrap justify-content-between">
+                <div class="d-flex flex-row justify-content-between flex-wrap">
                     <div class="d-flex flex-row">
                         <div>
                             <input type="checkbox" v-model="task.completed" @change="handleCheckboxClick(task.id)" />
                         </div>
                         <div class="ms-4">
-                            <h5 class="card-title" :class="{ isCompleted: task.isCompleted }">
-                                {{ task.label }}
-                            </h5>
-                            <p class="card-text" :class="{ isCompleted: task.isCompleted }">
-                                {{ task.description }}
-                            </p>
-                            <div class="d-flex flex-row flex-wrap justify-content-between">
+                            <div>
+                                <h5 class="card-title" :class="{ isCompleted: task.isCompleted }">
+                                    {{ task.label }}
+                                </h5>
+                                <p class="card-text" :class="{ isCompleted: task.isCompleted }">
+                                    {{ task.description }}
+                                </p>
+                            </div>
+
+                            <div class="d-flex flex-row flex-wrap">
                                 <div v-for="category in task.category" :key="category">
                                     <div class="d-flex flex-row justify-content-between card shadow-sm bg-body px-3 me-2"
                                         v-if="category === 'Marketing'">
