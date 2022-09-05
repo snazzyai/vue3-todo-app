@@ -10,12 +10,6 @@ export const useTaskStore = defineStore('task', () => {
   })
 
   const addTask = (label: string, description: string, category: Category) => {
-    // todo.value.unshift({
-    //   id: Math.random().toString(),
-    //   label,
-    //   task,
-    //   category
-    // })
     let newTask = [...task.value, {
       id: Math.random().toString(),
       label,
@@ -45,21 +39,7 @@ export const useTaskStore = defineStore('task', () => {
   }
 
 
-  // const setCompletedTask = (id: string) => {
-
-  // }
-
   return { task, getNumberOfTasks, addTask, deleteTask, setCompletedTask }
   
 })
 
-
-// {
-//   id: 1,
-//   taskHeading: "Design signup flow",
-//   taskDetail: "When a user arrives at a prospective place, he or she has to evaluate things",
-//   completed: false,
-//   category: ['Design'],
-//   attachments: 1
-//   messages: 3
-// }
