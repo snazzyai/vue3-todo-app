@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch, watchEffect } from "vue";
+import { ref, watchEffect } from "vue";
 import { useTaskStore } from "@/stores/task";
 import Alert from "@/components/TodoAlert/TodoAlert.vue";
 
