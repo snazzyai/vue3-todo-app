@@ -20,7 +20,8 @@ export const useTaskStore = defineStore('task', () => {
       id: Math.random().toString(),
       label,
       description,
-      category
+      category,
+      isCompleted: false
     }]
     task.value = newTask
     return
@@ -34,8 +35,19 @@ export const useTaskStore = defineStore('task', () => {
   }
 
   const setCompletedTask = (id: string) => {
-
+    let newTask = [...task.value]
+    newTask.map((task)=>{
+      if(task.id === id){
+        task.isCompleted = !task.isCompleted
+      }
+    })
+    task.value = newTask
   }
+
+
+  // const setCompletedTask = (id: string) => {
+
+  // }
 
   return { task, getNumberOfTasks, addTask, deleteTask, setCompletedTask }
   
